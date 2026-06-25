@@ -1,3 +1,5 @@
+/* BACKGROUND */
+
 const grid = document.getElementById('block-grid');
 
 const cellSize = 36;       // fixed px size — this is what makes cells perfectly square
@@ -66,3 +68,5 @@ function animate() {
 }
 
 animate();
+
+/* BACKGROUND */

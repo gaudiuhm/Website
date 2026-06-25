@@ -1,105 +1,206 @@
-/* ---------- Global ---------- */
- 
+/* ---------- FONT ---------- */
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/Horatio\ D\ Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------- GLOBAL ---------- */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- 
-body {
-    font-family: "Host Grotesk", sans-serif;
-    background: white;
-    height: 200vh;
+
+header {
+  font-family: 'MyFont', sans-serif;
+  background: white;
 }
- 
 
 /* ---------- BLOCK BACKGROUND ---------- */
 
 #block-grid {
-    position: fixed;
-    inset: 0;
-    display: grid;
-    pointer-events: none;
-    z-index: 0;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .block {
-    width: 100%;
-    height: 100%;
-    border-radius: 2px;
-    transform: scale(0.15);
-    transition: transform 0.1s ease-out;
-    opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  transform: scale(0.15);
+  transition: transform 0.1s ease-out;
+  opacity: 0.2;
 }
 
 .block-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* ---------- NAVBAR ---------- */
 
-
-.nav-icon :hover {
-  opacity: 75%;
-}
-
-.nav-icon {
-  width: 50px;
-  height: 50px;
-  justify-content: left;
-  display: flex;
-  position:absolute;
-  top: 25px;
-  left: 40px;
-  transition: opacity 2s ease-in-out;
-}
- 
-
 .navbar {
   display: flex;
-  justify-content: flex-end; 
- 
+  justify-content: flex-end;
   padding: 30px 50px;
   top: 20px;
- 
+
   position: sticky;
-  background: rgba(188, 188, 188, 0.4);
+  background: #e7e7e7;
+  opacity: 90%;
 
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-  border-radius:24px;
-  
+  border-radius: 24px;
+
   border: 1px solid rgba(255, 255, 255, 0.45);
-  
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.4),
-    0 8px 32px 0 rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.4),
+    0 10px 32px 0 rgba(0, 0, 0, 0.20);
+
   z-index: 1;
 }
- 
-.nav-links {
+
+/* ---------- NAV ICON ---------- */
+
+.nav-icon {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+
   display: flex;
-  gap: 6px;
- 
-  border: 1.5px solid rgba(147, 147, 147, 0.55);
-  border-radius: 16px;
-  padding: 8px 10px;
-}
- 
-.nav-links a {
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 6px 18px;
-  border-radius: 10px;
-}
- 
-.nav-links a:hover {
-  background: rgba(0, 0, 0, 0.15);
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
 }
 
+.nav-icon img {
+  width: 80px;
+  height: 80px;
+
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.1s ease-in-out;
+}
+
+.nav-icon:hover img {
+  opacity: 0.75;
+  animation: wiiSpin 1.5s ease-in-out;
+
+}
+
+@keyframes wiiSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+/* ---------- NAV LINKS ---------- */
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 140px;
+  height: 50px;
+
+  text-decoration: none;
+  color: #404040;
+
+  font-family: 'MyFont', sans-serif;
+  font-size: 14px;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #e0e0e0 40%,
+    #d8d8d8 100%
+  );
+
+  border: 3px solid #b8b8b8;
+  border-radius: 25px;
+
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Inner Wii ring */
+.nav-links a::before {
+  content: '';
+
+  position: absolute;
+  inset: 5px;
+
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+
+  pointer-events: none;
+}
+
+/* Wii pointer hover effect */
+.nav-links a:hover {
+  border-color: #6da3db;
+
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(109, 163, 219, 0.6);
+
+  color: #1a1a1a;
+}
+
+/* Wii click effect */
+.nav-links a:active {
+  background: linear-gradient(
+    to bottom,
+    #cfcfcf 0%,
+    #e5e5e5 100%
+  );
+
+  border-color: #4a82c2;
+
+  box-shadow:
+    inset 0 4px 6px rgba(0, 0, 0, 0.15);
+
+  transform: translateY(1px);
+}
+
+/* ---------- BODY ---------- */
+.myname {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 100px;
+  margin-left: 100px;
+
+}
