@@ -93,12 +93,10 @@ header {
   height: 80px;
 
   transition:
-    opacity 0.2s ease-in-out,
     transform 0.1s ease-in-out;
 }
 
 .nav-icon:hover img {
-  opacity: 0.75;
   animation: wiiSpin 1.5s ease-in-out;
 
 }
