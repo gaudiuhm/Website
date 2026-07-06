@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Giulian Giannone Portfolio Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/contact.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="index.html" class="nav-icon">
+                <img src="images/test.png" alt="Home">
+            </a>
+            <nav class="nav-links">
+                <a href="portfolio.html">Portfolio</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        <div id="block-grid"></div>
+
+        <main class="container">
+            <section class="contact-card">
+                <div class="contact-intro">
+                    <h1>Get in touch</h1>
+                    <p>Share a few details about your project or idea and i’ll reach out asap!</p>
+                </div>
+
+                <form class="contact-form">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+                    <label for="website">Work page</label>
+                    <input id="website" name="website" type="url" placeholder="https://linkedin.com/in/yourname">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell me about your project or idea" required></textarea>
+
+                    <button type="submit">Send message</button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
