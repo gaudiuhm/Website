@@ -22,5 +22,132 @@
             </nav>
         </header>
         <div id="block-grid"></div>
-    </body>
+    <main class="resume-layout">
+ 
+    <!-- LEFT: TIMELINE -->
+    <section class="timeline-section">
+ 
+      <h2 class="section-label">Experience</h2>
+ 
+      <div class="timeline">
+ 
+        <div class="timeline-item reveal">
+          <div class="timeline-node" style="background:#378ADD"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-date">Jul 2021 – Apr 2022</span>
+              <span class="timeline-location">Toronto, ON</span>
+            </div>
+            <h3 class="timeline-role">Graphic Designer &amp; Social Media Manager</h3>
+            <p class="timeline-org">The Best Media</p>
+            <ul class="timeline-bullets">
+              <li>Designed mobile-first wireframes and social assets to support product marketing goals.</li>
+              <li>Improved CTA clarity and visual hierarchy, increasing engagement by 18% and CTR by 24%.</li>
+              <li>Worked with 20+ clients to define user needs and iterate designs toward project success.</li>
+            </ul>
+          </div>
+        </div>
+ 
+        <div class="timeline-item reveal">
+          <div class="timeline-node" style="background:#1D9E75"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-date">Apr 2017 – Mar 2025</span>
+              <span class="timeline-location">Woodbridge, ON</span>
+            </div>
+            <h3 class="timeline-role">Assistant Manager &amp; CX Lead</h3>
+            <p class="timeline-org">La Paloma Gelateria &amp; Cafe</p>
+            <ul class="timeline-bullets">
+              <li>Identified service pain points and refined workflows during peak hours.</li>
+              <li>Maintained 97% satisfaction through improvements in ordering experience.</li>
+            </ul>
+          </div>
+        </div>
+ 
+      </div>
+ 
+      <h2 class="section-label">Education</h2>
+ 
+      <div class="timeline">
+ 
+        <div class="timeline-item reveal">
+          <div class="timeline-node" style="background:#7F77DD"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-date">Sep 2023 – May 2027</span>
+              <span class="timeline-location">Toronto, ON</span>
+            </div>
+            <h3 class="timeline-role">Honours BSc — Communications, Computer Science &amp; Statistics</h3>
+            <p class="timeline-org">University of Toronto</p>
+            <ul class="timeline-bullets">
+              <li>CCT 380 — Human-Computer Interaction and Communication</li>
+              <li>CCT 250 — Foundations of Digital Design and Production</li>
+              <li>CCT 260 — Web Development and Design I</li>
+              <li>CCT 270 — Principles in Game Design</li>
+            </ul>
+          </div>
+        </div>
+ 
+      </div>
+ 
+    
+ 
+    </section>
+ 
+    <!-- RIGHT: SKILLS -->
+    <aside class="skills-section">
+ 
+      <h2 class="section-label">Product &amp; UX</h2>
+      <div class="skill-group">
+        <span class="skill-pill" style="--pill-color:#378ADD22; --pill-border:#378ADD66">Research</span>
+        <span class="skill-pill" style="--pill-color:#378ADD22; --pill-border:#378ADD66">User Testing</span>
+        <span class="skill-pill" style="--pill-color:#378ADD22; --pill-border:#378ADD66">Wireframes</span>
+        <span class="skill-pill" style="--pill-color:#378ADD22; --pill-border:#378ADD66">Prototypes</span>
+        <span class="skill-pill" style="--pill-color:#378ADD22; --pill-border:#378ADD66">IA</span>
+        <span class="skill-pill" style="--pill-color:#378ADD22; --pill-border:#378ADD66">Interaction Design</span>
+      </div>
+ 
+      <h2 class="section-label">Design Tools</h2>
+      <div class="skill-group">
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Figma</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Framer</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Spline</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Blender</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Canva</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Photoshop</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Illustrator</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">Premiere Pro</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">After Effects</span>
+        <span class="skill-pill" style="--pill-color:#D4537E22; --pill-border:#D4537E66">XD</span>
+      </div>
+ 
+      <h2 class="section-label">Development</h2>
+      <div class="skill-group">
+        <span class="skill-pill" style="--pill-color:#1D9E7522; --pill-border:#1D9E7566">HTML</span>
+        <span class="skill-pill" style="--pill-color:#1D9E7522; --pill-border:#1D9E7566">CSS</span>
+        <span class="skill-pill" style="--pill-color:#1D9E7522; --pill-border:#1D9E7566">JavaScript</span>
+        <span class="skill-pill" style="--pill-color:#1D9E7522; --pill-border:#1D9E7566">Java</span>
+        <span class="skill-pill" style="--pill-color:#1D9E7522; --pill-border:#1D9E7566">React.js</span>
+        <span class="skill-pill" style="--pill-color:#1D9E7522; --pill-border:#1D9E7566">p5.js</span>
+      </div>
+ 
+    </aside>
+ 
+  </main>
+ 
+  <script>
+    // scroll-reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+ 
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+ 
+</body>
 </html>
