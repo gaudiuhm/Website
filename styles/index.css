@@ -154,7 +154,6 @@ header {
     transform 0.15s ease;
 }
 
-/* Inner Wii ring */
 .nav-links a::before {
   content: '';
 
@@ -167,7 +166,6 @@ header {
   pointer-events: none;
 }
 
-/* Wii pointer hover effect */
 .nav-links a:hover {
   border-color: #6da3db;
 
@@ -178,7 +176,6 @@ header {
   color: #1a1a1a;
 }
 
-/* Wii click effect */
 .nav-links a:active {
   background: linear-gradient(
     to bottom,
@@ -236,7 +233,7 @@ header {
 
 }
 
-/* ---------- PICTURE + MII OVERLAY ---------- */
+/* ---------- PICTURE ---------- */
 
 .picture {
   margin-top: 160px;
@@ -247,7 +244,7 @@ header {
 }
 
 .picture:hover {
-  transform: translateY(-12px);
+  transform: translateY(-6px);
 }
 
 
@@ -300,11 +297,11 @@ header {
 }
 
 .contact-link.email {
-  background: rgba(55, 138, 221, 0.13);
-  border: 1.5px solid rgba(55, 138, 221, 0.4);
+  background: rgba(144, 55, 221, 0.103);
+  border: 1.5px solid rgba(144, 55, 221, 0.4);
 }
 
 .contact-link.linkedin {
-  background: rgba(29, 158, 117, 0.13);
-  border: 1.5px solid rgba(29, 158, 117, 0.4);
+  background: rgba(144, 55, 221, 0.103);
+  border: 1.5px solid rgba(144, 55, 221, 0.4);
 }
