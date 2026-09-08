@@ -98,17 +98,11 @@ header {
 
 .nav-icon:hover img {
   animation: wiiSpin 1.5s ease-in-out;
-
 }
 
 @keyframes wiiSpin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(720deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(720deg); }
 }
 
 /* ---------- NAV LINKS ---------- */
@@ -154,7 +148,6 @@ header {
     transform 0.15s ease;
 }
 
-/* Inner Wii ring */
 .nav-links a::before {
   content: '';
 
@@ -167,7 +160,6 @@ header {
   pointer-events: none;
 }
 
-/* Wii pointer hover effect */
 .nav-links a:hover {
   border-color: #6da3db;
 
@@ -178,7 +170,6 @@ header {
   color: #1a1a1a;
 }
 
-/* Wii click effect */
 .nav-links a:active {
   background: linear-gradient(
     to bottom,
@@ -212,87 +203,121 @@ header {
   margin-bottom: 28px;
 }
 
-.portfolio-grid {
+/* ---------- WII CHANNEL GRID ---------- */
+
+.wii-channel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 24px;
-}
-
-.project-tile {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  font-family: 'Host Grotesk', sans-serif;
-}
-
-.project-tile:hover {
-  transform: translateY(-4px);
-}
-
-.project-tile-image {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  background: #f5f5f5;
-}
-
-.project-tile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.4s ease;
-}
-
-
-
-.project-tile-info {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 10px;
 }
 
-.project-tile-tags {
+.wii-channel {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 2px 6px rgba(0, 0, 0, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s cubic-bezier(0.3, 1.5, 0.2, 2), box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.wii-channel:hover {
+  transform: scale(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.28),
+    0 2px 4px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+.wii-channel:active {
+  transform: scale(0.97);
+}
+
+.wii-channel--empty {
+  cursor: default;
+}
+
+.wii-channel--empty:hover {
+  transform: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 2px 6px rgba(0, 0, 0, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.wii-channel-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.wii-channel-gloss {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 48%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  border-radius: 9px 9px 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wii-channel-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  border: none;
+  z-index: 0;
+}
+
+.wii-channel-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px 10px;
 }
 
-.project-tag {
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 10px;
-  border-radius: 20px;
-  border: 1.5px solid;
-  letter-spacing: 0.03em;
-}
-
-.project-tile-name {
+.wii-channel-label {
   font-family: 'MyFont', sans-serif;
-  font-size: 22px;
-  font-weight: normal;
-  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.02em;
 }
 
-.project-tile-desc {
-  font-size: 13px;
-  font-weight: 300;
-  color: #666;
-  line-height: 1.65;
-}
-
-.project-tile-cta {
-  font-size: 13px;
-  font-weight: 500;
-  color: #3997EE;
-  margin-top: 4px;
+.wii-channel-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 3px 8px;
+  backdrop-filter: blur(4px);
+  font-family: 'MyFont', sans-serif;
 }
