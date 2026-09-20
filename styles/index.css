@@ -374,7 +374,7 @@ body {
 
 .hero-name {
   font-family: 'Host Grotesk', sans-serif;
-  font-size: 110px;
+  font-size: clamp(84px, 8vw, 100px);
   font-weight: normal;
   line-height: 1;
   color: #0a0a0a;
