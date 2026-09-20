@@ -306,12 +306,13 @@ body {
 
   gap: 20px;
 
+  width: max-content;
+
+  padding-right: 20px;
+
   white-space: nowrap;
 
-  animation:
-    ticker-scroll 30s linear infinite;
-
-  padding-left: 32px;
+  animation: ticker-scroll 30s linear infinite;
 }
 
 .wii-ticker-inner span {
@@ -373,7 +374,7 @@ body {
 
 .hero-name {
   font-family: 'Host Grotesk', sans-serif;
-  font-size: clamp(56px, 8vw, 110px);
+  font-size: 110px;
   font-weight: normal;
   line-height: 1;
   color: #0a0a0a;
@@ -635,7 +636,6 @@ body {
 ========================================================= */
 
 
-/* ---------- STACK PHOTO + BIO ---------- */
 
 @media (max-width: 768px) {
 
@@ -663,11 +663,6 @@ body {
   .bio-body {
     max-width: 100%;
   }
-
-}
-
-
-@media (max-width: 768px) {
 
   /* ---------- NAVBAR ---------- */
 
@@ -715,8 +710,6 @@ body {
   }
 
   .hero-name {
-    font-size:
-      clamp(48px, 13vw, 80px);
 
     margin-bottom: 30px;
   }
@@ -743,6 +736,11 @@ body {
     width: 100px;
 
     right: -15px;
+  }
+
+
+  .wii-ticker-inner {
+    --ticker-duration: 50s;
   }
 
 }

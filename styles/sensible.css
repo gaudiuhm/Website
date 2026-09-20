@@ -667,10 +667,12 @@ main {
   }
 
   .cs-hero-image {
-    order: -1;
+    --proto-ratio: 3 / 4;
+ 
+    order: 1;
     align-self: center;
-
-    width: 50%;
+ 
+    width: 90%;
     max-width: 480px;
   }
 
