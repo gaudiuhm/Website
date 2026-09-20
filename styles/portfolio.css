@@ -16,6 +16,10 @@
   background-size: cover;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   font-family: 'MyFont', sans-serif;
   background: white;
@@ -320,4 +324,77 @@ header {
   padding: 3px 8px;
   backdrop-filter: blur(4px);
   font-family: 'MyFont', sans-serif;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* ---------- WII GRID: REFLOW INSTEAD OF SHRINK ----------
+   Below 1100px the grid stops using a fixed 4 columns. Each
+   tile keeps a minimum width of 220px, and the browser fits
+   as many columns as the screen allows (4 -> 3 -> 2 -> 1),
+   so tiles never get smaller than that. */
+
+@media (max-width: 1100px) {
+
+  .portfolio-section {
+    padding: 60px 40px;
+  }
+
+  .wii-channel-grid {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-rows: none;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    justify-content: center;
+
+    padding:
+      90px 15px 20px;
+
+    top: 10px;
+  }
+
+  .nav-icon {
+    top: 5px;
+    left: 50%;
+
+    transform:
+      translateX(-50%);
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 6px;
+  }
+
+  .nav-links a {
+    min-width: 90px;
+
+    height: 45px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .portfolio-section {
+    padding: 40px 20px;
+  }
+
 }

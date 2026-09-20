@@ -339,18 +339,43 @@ body {
   transform: translateY(1px);
 }
 
-@media (max-width: 640px) {
+
+
+
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+
   .navbar {
-    padding: 24px 20px;
     justify-content: center;
+
+    padding:
+      90px 15px 20px;
+
+    top: 10px;
+  }
+
+  .nav-icon {
+    top: 5px;
+    left: 50%;
+
+    transform:
+      translateX(-50%);
   }
 
   .nav-links {
-    flex-wrap: wrap;
+    width: 100%;
+
     justify-content: center;
+
+    gap: 6px;
   }
 
-  .contact-card {
-    padding: 24px;
+  .nav-links a {
+    min-width: 90px;
+
+    height: 45px;
+
+    font-size: 12px;
   }
 }

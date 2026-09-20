@@ -369,4 +369,63 @@ header {
   padding: 5px 14px;
   cursor: default;
 }
+
+
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    justify-content: center;
+
+    padding:
+      90px 15px 20px;
+
+    top: 10px;
+  }
+
+  .nav-icon {
+    top: 5px;
+    left: 50%;
+
+    transform:
+      translateX(-50%);
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 6px;
+  }
+
+  .nav-links a {
+    min-width: 90px;
+
+    height: 45px;
+
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  /* ---------- PAGE LAYOUT ---------- */
+
+  .resume-layout {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 40px auto 60px;
+  }
+
+  /* ---------- SKILLS SIDEBAR ---------- */
+
+  .skills-section {
+    width: 100%;
+    position: relative;
+    top: auto;
+  }
+}
  

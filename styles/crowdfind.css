@@ -20,6 +20,7 @@ body {
   background: white;
   min-height: 100vh;
   color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 /* ---------- BLOCK BACKGROUND ---------- */
@@ -164,13 +165,25 @@ main {
 }
 
 .cs-hero-image {
+  /* Set this to your iframe's width / height (Figma's default embed is 800 / 450) */
+  --proto-ratio: 800 / 450;
+
   flex-shrink: 0;
   width: 480px;
+  aspect-ratio: var(--proto-ratio);
 }
 
 .cs-hero-img {
   width: 100%;
   height: auto;
+  border-radius: 24px;
+}
+
+.cs-hero-image iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
   border-radius: 24px;
 }
 
@@ -610,3 +623,132 @@ main {
 .cs-back-link:hover {
   opacity: 0.7;
 }
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+
+
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    justify-content: center;
+
+    padding:
+      90px 15px 20px;
+
+    top: 10px;
+  }
+
+  .nav-icon {
+    top: 5px;
+    left: 50%;
+
+    transform:
+      translateX(-50%);
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 6px;
+  }
+
+  .nav-links a {
+    min-width: 90px;
+
+    height: 45px;
+
+    font-size: 12px;
+  }
+
+  /* ---------- MAIN ---------- */
+
+  main {
+    padding: 40px 20px 0;
+  }
+
+
+  .cs-hero {
+    padding-bottom: 48px;
+  }
+
+  .cs-hero:has(> .cs-hero-image),
+  .cs-hero :has(> .cs-hero-image) {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .cs-hero-image {
+    order: -1;
+    align-self: center;
+
+    width: 50%;
+    max-width: 480px;
+  }
+
+  .cs-title {
+    font-size: clamp(44px, 12vw, 80px);
+    overflow-wrap: anywhere;
+  }
+
+  .cs-subtitle {
+    font-size: 17px;
+    max-width: 100%;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  .cs-section {
+    padding: 48px 0;
+  }
+
+  .cs-two-col {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cs-section-label-col {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .cs-section-label-centered {
+    margin-bottom: 32px;
+  }
+
+  .cs-heading,
+  .cs-heading-center {
+    font-size: 24px;
+  }
+
+  .cs-body-center {
+    margin-bottom: 32px;
+  }
+
+  /* ---------- GRIDS ---------- */
+
+  .cs-role-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-audience-card {
+    padding: 26px 22px;
+  }
+
+  /* ---------- TIMELINE ---------- */
+
+  .cs-process-card {
+    padding: 18px 20px;
+  }
+
+}
+
+
