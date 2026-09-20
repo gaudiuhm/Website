@@ -1,4 +1,6 @@
-/* ---------- FONT ---------- */
+/* =========================================================
+   FONT
+========================================================= */
 
 @font-face {
   font-family: 'MyFont';
@@ -7,21 +9,32 @@
   font-style: normal;
 }
 
-/* ---------- GLOBAL ---------- */
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-size: cover;
 }
 
-header {
-  font-family: 'MyFont', sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   background: white;
+  font-family: 'Host Grotesk', sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
-/* ---------- BLOCK BACKGROUND ---------- */
+
+/* =========================================================
+   BLOCK BACKGROUND
+========================================================= */
 
 #block-grid {
   position: fixed;
@@ -46,15 +59,20 @@ header {
   justify-content: center;
 }
 
-/* ---------- NAVBAR ---------- */
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
   display: flex;
   justify-content: flex-end;
-  padding: 30px 50px;
-  top: 20px;
 
+  padding: 30px 50px;
+
+  top: 20px;
   position: sticky;
+
   background: #e7e7e7;
   opacity: 90%;
 
@@ -69,13 +87,15 @@ header {
     inset 0 2px 2px rgba(255, 255, 255, 0.4),
     0 10px 32px 0 rgba(0, 0, 0, 0.20);
 
-  z-index: 2;
+  z-index: 10;
 }
 
-/* ---------- NAV ICON ---------- */
+
+/* ---------- HOME ICON ---------- */
 
 .nav-icon {
   position: absolute;
+
   top: 10px;
   left: 20px;
 
@@ -92,16 +112,15 @@ header {
   width: 80px;
   height: 80px;
 
-  transition:
-    transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 .nav-icon:hover img {
   animation: wiiSpin 1.5s ease-in-out;
-
 }
 
 @keyframes wiiSpin {
+
   from {
     transform: rotate(0deg);
   }
@@ -109,7 +128,9 @@ header {
   to {
     transform: rotate(720deg);
   }
+
 }
+
 
 /* ---------- NAV LINKS ---------- */
 
@@ -129,17 +150,19 @@ header {
   height: 50px;
 
   text-decoration: none;
+
   color: #404040;
 
   font-family: 'MyFont', sans-serif;
   font-size: 14px;
 
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #e0e0e0 40%,
-    #d8d8d8 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #e0e0e0 40%,
+      #d8d8d8 100%
+    );
 
   border: 3px solid #b8b8b8;
   border-radius: 25px;
@@ -177,11 +200,12 @@ header {
 }
 
 .nav-links a:active {
-  background: linear-gradient(
-    to bottom,
-    #cfcfcf 0%,
-    #e5e5e5 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      #cfcfcf 0%,
+      #e5e5e5 100%
+    );
 
   border-color: #4a82c2;
 
@@ -191,117 +215,536 @@ header {
   transform: translateY(1px);
 }
 
-/* ---------- BODY ---------- */
-.content h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-  position: relative;
-  padding-top: 150px;
-  padding-bottom: 40px;
-  padding-left: 200px;
-  font-family: 'Host Grotesk', sans-serif;
-  font-size: 50px;
-  font-weight: 200;
 
+/* =========================================================
+   TICKER BANNER
+========================================================= */
+
+.wii-ticker-wrap {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+
+  height: 36px;
+
+  margin: 12px 0 0;
+
+  color: #404040;
+
+  font-family: 'MyFont', sans-serif;
+  font-size: 14px;
+
+  opacity: 90%;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.4),
+    0 10px 32px 0 rgba(0, 0, 0, 0.20);
+
+  overflow: hidden;
+
+  translate: 0 20px;
+}
+
+
+/* ---------- TICKER LABEL ---------- */
+
+.wii-ticker-label {
+  flex-shrink: 0;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 16px;
+
+  font-family: 'MyFont', sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+
+  letter-spacing: 0.12em;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #3997EE 0%,
+      #96bfe6 100%
+    );
+
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.5);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+
+/* ---------- TICKER TRACK ---------- */
+
+.wii-ticker-track {
+  flex: 1;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.wii-ticker-inner {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  white-space: nowrap;
+
+  animation:
+    ticker-scroll 30s linear infinite;
+
+  padding-left: 32px;
+}
+
+.wii-ticker-inner span {
+  font-family: 'MyFont', sans-serif;
+
+  font-size: 11px;
+  font-weight: normal;
+
+  letter-spacing: 0.06em;
+
+  color: #2a2a2a;
+
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6);
+
+  white-space: nowrap;
+}
+
+.wii-ticker-dot {
+  font-size: 6px !important;
+
+  color: #888 !important;
+
+  letter-spacing: 0 !important;
+}
+
+@keyframes ticker-scroll {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 
 }
 
-.content p {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-  position: relative;
-  padding-left: 200px;
-  font-family: 'Host Grotesk', sans-serif;
-  font-size: 16px;
-  font-weight: 200;
-  margin-bottom: 20px;
-  max-width: 700px;
 
-}
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-
-}
-
-/* ---------- PICTURE ---------- */
-
-.picture {
-  margin-top: 160px;
-  margin-right: 200px;
+  position: relative;
   z-index: 1;
-  position: relative; 
-  transition: transform 0.25s ease;
+
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.picture:hover {
-  transform: translateY(-6px);
+
+/* ---------- NAME ---------- */
+
+.hero-name {
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: clamp(56px, 8vw, 110px);
+  font-weight: normal;
+  line-height: 1;
+  color: #0a0a0a;
+
+  text-align: center;
+
+  margin-bottom: 70px;
+
+  letter-spacing: -0.06em;
 }
 
 
-.picture img.profile-img {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  border: #b8b8b8 3px solid;
-  display: block;
-  border-radius: 50px;
-  transition: transform 0.25s ease;
+/* ---------- PHOTO + BIO ---------- */
+
+.hero-content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 80px;
+}
+
+
+/* ---------- PHOTO COLUMN ---------- */
+
+.hero-center {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* ---------- BIO ---------- */
+
+.hero-bio {
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 20px;
+
+  text-align: left;
+
+  translate: 0 -25px;
+}
+
+.bio-tagline {
+  font-family: 'Host Grotesk', sans-serif;
+
+  font-size: 28px;
+  font-weight: 500;
+
+  color: #111;
+
+  letter-spacing: 0.02em;
+
+  padding-bottom: 15px;
+}
+
+.bio-body {
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #555;
+
+  line-height: 1.6;
+
+  max-width: 600px;
+}
+
+.contact-highlight {
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  color: #555;
+}
+
+.contact-highlight:hover {
+  transform: scale(1.1);
+  color: #3997EE;
   
 }
 
-.mii-overlay {
-  position: absolute;
-  bottom: -12px;
-  right: -12px;
-  width: 140px;
-  height: auto;
-  z-index: 101;
-  pointer-events: none;
-  filter: drop-shadow(0 -2px 6px rgba(0, 0, 0, .5));
+
+/* =========================================================
+   PHOTO + CONTACT
+========================================================= */
+
+.hero-center {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
 }
 
-/* ---------- CONTACT LINKS ---------- */
+
+/* ---------- PROFILE PICTURE ---------- */
+
+.picture {
+  position: relative;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.picture:hover {
+  transform:
+    translateY(-6px);
+}
+
+.picture img.profile-img {
+  width: 320px;
+  height: 320px;
+
+  object-fit: cover;
+
+  border: #b8b8b8 3px solid;
+
+  display: block;
+
+  border-radius: 50px;
+}
+
+
+/* ---------- MII OVERLAY ---------- */
+
+.mii-overlay {
+  position: absolute;
+
+  bottom: -12px;
+  right: -20px;
+
+  width: 130px;
+  height: auto;
+
+  z-index: 101;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 -2px 6px rgba(0, 0, 0, 0.4)
+    );
+}
+
+
+/* =========================================================
+   CONTACT LINKS
+========================================================= */
+
 .contact-links {
   display: flex;
-  align-items: center;
-  justify-content: right;
-  padding-right: 330px;
-  gap: 12px;
-  margin-top: 24px;
+
+  gap: 10px;
 }
 
 .contact-link {
   font-family: 'MyFont', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: #333;
+
+  font-size: 13px;
+
+  font-weight: normal;
+
+  color: #404040;
+
   text-decoration: none;
-  padding: 5px 14px;
-  border-radius: 20px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 120px;
+  height: 42px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #e0e0e0 40%,
+      #d8d8d8 100%
+    );
+
+  border: 3px solid #b8b8b8;
+
+  border-radius: 21px;
+
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+
+  position: relative;
+}
+
+.contact-link::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 4px;
+
+  border:
+    2px solid rgba(0, 0, 0, 0.04);
+
+  border-radius: 16px;
+
+  pointer-events: none;
 }
 
 .contact-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-color: #6da3db;
+
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(109, 163, 219, 0.6);
+
+  color: #1a1a1a;
+
+  transform:
+    translateY(-2px);
 }
 
-.contact-link.email {
-  background: rgba(144, 55, 221, 0.103);
-  border: 1.5px solid rgba(144, 55, 221, 0.4);
+.contact-link:active {
+  background:
+    linear-gradient(
+      to bottom,
+      #cfcfcf 0%,
+      #e5e5e5 100%
+    );
+
+  border-color: #4a82c2;
+
+  box-shadow:
+    inset 0 4px 6px rgba(0, 0, 0, 0.15);
+
+  transform:
+    translateY(1px);
 }
 
-.contact-link.linkedin {
-  background: rgba(144, 55, 221, 0.103);
-  border: 1.5px solid rgba(144, 55, 221, 0.4);
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding:
+      25px 25px;
+  }
+
+  .nav-links a {
+    min-width: 110px;
+  }
+
+  .hero {
+    padding:
+      0 30px;
+  }
+
+  .projects-section {
+    padding:
+      0 30px;
+  }
+
+  .projects-stack {
+    max-width: 750px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    justify-content: center;
+
+    padding:
+      90px 15px 20px;
+
+    top: 10px;
+  }
+
+  .nav-icon {
+    top: 5px;
+    left: 50%;
+
+    transform:
+      translateX(-50%);
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 6px;
+  }
+
+  .nav-links a {
+    min-width: 90px;
+
+    height: 45px;
+
+    font-size: 12px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    padding:
+      0 20px;
+
+    margin-top: 50px;
+  }
+
+  .hero-name {
+    font-size:
+      clamp(48px, 13vw, 80px);
+
+    margin-bottom: 30px;
+  }
+
+  .hero-bio {
+    margin-bottom: 45px;
+  }
+
+  .bio-body {
+    font-size: 17px;
+
+    line-height: 1.6;
+  }
+
+  .bio-tagline {
+    font-size: 20px;
+  }
+
+
+  /* ---------- PROFILE ---------- */
+
+  .picture img.profile-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .mii-overlay {
+    width: 100px;
+
+    right: -15px;
+  }
+
+
+
+
 }

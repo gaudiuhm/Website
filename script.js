@@ -76,5 +76,3 @@ function animate() {
 }
 
 animate();
-
-/* BACKGROUND */

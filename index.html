@@ -4,47 +4,229 @@
         <title>Giulian Giannone Portfolio Website</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="styles/index.css">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-        <script src="script.js" defer></script>
 
+        <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+        <script src="script.js" defer></script>
     </head>
     <body>
+        <!-- ==================== NAVBAR ==================== -->
         <header class="navbar">
             <a href="index.html" class="nav-icon">
                 <img src="images/test.png" alt="Home">
             </a>
             <nav class="nav-links">
-                <a href="portfolio.html">Portfolio</a>
-                <a href="resume.html">Resume</a>
-                <a href="contact.html">Contact</a>
+                <a href="portfolio.html">
+                    Portfolio
+                </a>
+                <a href="resume.html">
+                    Resume
+                </a>
+                <a href="contact.html">
+                    Contact
+                </a>
             </nav>
         </header>
-        <div id="block-grid"></div> 
-        <div class="hero">
-            <div class="content">
-                <h1>Giulian Giannone</h1>
-                <p>Hi, I'm Giulian! I like coding and designing products.</p>
-                <p>This website is an amalgamation of different professional works that I have completed over the years. I am currently in my final year of study at the University of Toronto for Communications, Computer Science, and Statistics with a focus on user experience and interface design.</p>
-                <p>When I'm not coding or designing, you can find me playing golf, creating 3D models, and exploring new technologies. I'm always down to try new things!</p>
-                <p>If you have any projects in the field of 3D modeling, graphic design, or web development, I'd love to work together!</p>
+        <!-- ==================== TICKER BANNER ==================== -->
+        <div class="wii-ticker-wrap">
+            <div class="wii-ticker-label">
+                SKILLS
             </div>
-            <div class = "picture">
-                <a href="contact.html">
-                    <img src="images/Profile.JPG" alt="Profile Picture" class="profile-img">
-                </a>
-                <img src="images/render.png" alt="" class="mii-overlay">
+            <div class="wii-ticker-track">
+                <div class="wii-ticker-inner">
+                    <span>UX Design</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>UI Design</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Figma</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>HTML &amp; CSS</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>JavaScript</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Java</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>React.js</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Next.js</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Vue.js</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Blender</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>3D Modelling</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Framer</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Spline</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Photoshop</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Illustrator</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>User Research</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Wireframing</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Prototyping</span>
+                    <span class="wii-ticker-dot">■</span>
+
+
+                    <!-- Duplicate for seamless loop -->
+
+                    <span>UX Design</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>UI Design</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Figma</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>HTML &amp; CSS</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>JavaScript</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Java</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>React.js</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Next.js</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Vue.js</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Blender</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>3D Modelling</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Framer</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Spline</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Photoshop</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Illustrator</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>User Research</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Wireframing</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                    <span>Prototyping</span>
+                    <span class="wii-ticker-dot">■</span>
+
+                </div>
             </div>
         </div>
-        <di v class="contact-links">
-            <a href="mailto:giuliangiannone7@gmail.com" class="contact-link email">
-            Email
-            </a>
-            <a href="https://linkedin.com/in/giuliangiannone" target="_blank" class="contact-link linkedin">
-            LinkedIn
-            </a>
-        </div>
+        <!-- ==================== BACKGROUND GRID ==================== -->
+        <div id="block-grid"></div>
+        <!-- ==================== HERO ==================== -->
+        <main>
+            <section class="hero">
+
+                <h1 class="hero-name">
+                    Giulian Giannone
+                </h1>
+
+                <div class="hero-content">
+
+                    <div class="hero-center">
+                    <div class="picture">
+                        <a href="contact.html">
+                        <img
+                            src="images/Profile.JPG"
+                            alt="Profile Picture"
+                            class="profile-img"
+                        >
+                        </a>
+
+                        <img
+                        src="images/render.png"
+                        alt=""
+                        class="mii-overlay"
+                        >
+                    </div>
+
+                    <div class="contact-links">
+                        <a
+                        href="mailto:giuliangiannone7@gmail.com"
+                        class="contact-link"
+                        >
+                        Email
+                        </a>
+
+                        <a
+                        href="https://linkedin.com/in/giuliangiannone"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                        >
+                        LinkedIn
+                        </a>
+                    </div>
+                    </div>
+
+                    <div class="hero-bio">
+                        <p class="bio-tagline">
+                            Hi! I'm a UI/UX Designer &amp; Web Developer.
+                        </p>
+
+                        <p class="bio-body">
+
+                            I am currently a fourth year student at the University of Toronto studying Computer Science, Statistics,
+                            and Communications. During my time at UofT, I have developed a strong interest in UI/UX design 
+                            and web development, which has led me to pursue various projects and competitions in these fields.
+                        </p>
+
+                        <p class="bio-body">
+                            I build products that look good and work well which can be seen in my portfolio. 
+                            I am passionate about creating user-friendly and visually appealing designs that enhance the user experience.
+                        </p>
+
+                        <p class="bio-body">
+                            I'm open to projects in UI/UX design, web development, and graphic design. 
+                            If you have a project in mind, feel free to reach out to me through my <a href="contact.html"><span class = "contact-highlight">contact page!</span></a>
+                        </p>
+                    </div>
+
+                </div>
+
+                </section>
+        </main>    
     </body>
 </html>
